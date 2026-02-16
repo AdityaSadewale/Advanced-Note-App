@@ -1,0 +1,391 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.hidden{
+    display:none;
+}
+
+/* ================= FUTURISTIC COSMIC BACKGROUND ================= */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:#0a0a1a;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Animated gradient nebula */
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background: linear-gradient(
+        60deg,
+        #0a0a1a,
+        #1a0a2c,
+        #0a1a3c,
+        #2c0a4a,
+        #0a2c3c
+    );
+    background-size:400% 400%;
+    animation:cosmicGradient 20s ease infinite;
+    z-index:-2;
+    opacity:0.8;
+    border-radius:50%;
+}
+
+/* Floating glow stars */
+body::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
+    background-size:10px 10px;
+    animation:starMove 60s linear infinite;
+    z-index:-1;
+}
+
+/* Gradient animation */
+@keyframes cosmicGradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Stars slowly drift */
+@keyframes starMove{
+    0%{background-position:0 0;}
+    100%{background-position:-1000px -1000px;}
+}
+
+/* ================= LOCK SCREEN ================= */
+.lock-screen{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    animation:fadeIn 0.6s ease;
+    color:#fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    font-weight:500;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    padding:40px 30px;
+    border-radius:20px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+.lock-screen h2{
+    font-size:28px;
+    margin-bottom:15px;
+    color:#00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #0ff;
+}
+
+.lock-screen input{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #444;
+    width:220px;
+    margin-top:10px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    outline:none;
+    box-shadow:0 0 8px rgba(0,255,255,0.2);
+}
+
+.lock-screen input::placeholder{
+    color:#ccc;
+}
+
+.lock-screen button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background: linear-gradient(45deg,#00f0ff,#0b6d24);
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    box-shadow:0 0 10px rgba(0,255,255,0.3);
+    transition:0.2s;
+}
+
+.lock-screen button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px rgba(0,255,255,0.6);
+}
+
+/* ================= APP LAYOUT ================= */
+.app{
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.05);
+    border-radius:20px;
+    width:100%;
+    max-width:950px;
+    animation:fadeIn 0.6s ease;
+}
+
+.layout{
+    display:flex;
+    height:80vh;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+    width:230px;
+    background:#f5f5f5;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    transition:0.3s;
+}
+
+.sidebar h2{
+    font-size:18px;
+}
+
+.sidebar ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.sidebar li{
+    cursor:pointer;
+    padding:8px 10px;
+    border-radius:8px;
+    transition:0.2s;
+}
+
+.sidebar li:hover{
+    background:#ddd;
+}
+
+.active-folder{
+    background:#667eea;
+    color:white;
+}
+
+.sidebar button{
+    margin-top:auto;
+    padding:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#667eea;
+    color:white;
+    transition:0.2s;
+}
+
+.sidebar button:hover{
+    opacity:0.9;
+}
+
+/* ================= MAIN ================= */
+.main{
+    flex:1;
+    background:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    gap:15px;
+}
+
+.topbar input{
+    padding:10px 15px;
+    border-radius:25px;
+    border:1px solid #ddd;
+    width:250px;
+    outline:none;
+}
+
+.topbar button{
+    padding:8px 18px;
+    border-radius:25px;
+    border:none;
+    background:#667eea;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.topbar button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+#saveStatus{
+    font-size:12px;
+    margin-right:15px;
+    color:green;
+}
+
+/* ================= NOTES ================= */
+.notes-container{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    overflow-y:auto;
+    padding-right:5px;
+}
+
+.note{
+    background:white;
+    border-radius:16px;
+    padding:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+    animation:slideUp 0.4s ease;
+}
+
+.note:hover{
+    transform:translateY(-3px);
+}
+
+.note input{
+    border:none;
+    font-size:17px;
+    font-weight:600;
+    width:100%;
+    margin-bottom:8px;
+    outline:none;
+}
+
+.note textarea{
+    border:none;
+    width:100%;
+    resize:none;
+    outline:none;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.note small{
+    display:block;
+    margin-top:10px;
+    color:#888;
+    font-size:12px;
+}
+
+.note .top{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-bottom:8px;
+}
+
+.note button{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.pinned{
+    border-left:5px solid gold;
+}
+
+/* NOTE COLORS */
+.note.yellow{ background:#fff9c4; }
+.note.blue{ background:#cce5ff; }
+.note.green{ background:#d4edda; }
+
+/* ================= DARK MODE ================= */
+.dark{
+    background:#0f0f0f;
+}
+
+.dark .layout{
+    background:#121212;
+}
+
+.dark .sidebar{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark .sidebar li:hover{
+    background:#333;
+}
+
+.dark .main{
+    background:#121212;
+}
+
+.dark .note{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark .topbar input{
+    background:#1e1e1e;
+    color:white;
+    border:1px solid #333;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+    .layout{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .sidebar{
+        width:100%;
+        flex-direction:row;
+        overflow-x:auto;
+    }
+
+    .sidebar ul{
+        flex-direction:row;
+    }
+
+    .main{
+        padding:15px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .topbar input{
+        width:100%;
+    }
+}

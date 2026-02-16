@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Notes App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔐 LOCK SCREEN -->
+<div id="lockScreen" class="lock-screen">
+    <h2>🔐 Secure Notes</h2>
+     <p>Default Password  <b></b></p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button id="unlockBtn">Unlock</button>
+</div>
+
+<!-- MAIN APP -->
+<div class="app hidden">
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>📂 Folders</h2>
+            <ul id="folderList">
+                <li class="active-folder">All Notes</li>
+                <li>Work</li>
+                <li>Personal</li>
+            </ul>
+            <button id="addFolderBtn" class="neon-btn">+ Add Folder</button>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <div class="topbar">
+                <input type="text" id="searchInput" placeholder="Search notes...">
+                <div class="topbar-buttons">
+                    <span id="saveStatus">Saved ✓</span>
+                    <button id="createBtn" class="neon-btn">+ New</button>
+                    <button id="themeToggle" class="neon-btn">🌙</button>
+                </div>
+            </div>
+
+            <div class="notes-container"></div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
