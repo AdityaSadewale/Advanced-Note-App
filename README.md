@@ -1,7 +1,3 @@
-
-
----
-````markdown
 # Advanced Note App 🚀
 
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/AdityaSadewale/Advanced-Note-App?style=flat-square)
