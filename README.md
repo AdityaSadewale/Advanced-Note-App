@@ -35,14 +35,6 @@ A sleek, futuristic, and **feature-rich note-taking application** designed for a
   Cosmic gradient backgrounds, animated stars, and neon effects.
 
 ---
-
-## 🖼 Demo
-
-![App Demo](https://user-images.githubusercontent.com/yourusername/demo-image.gif)  
-*(Replace with your actual screenshot or GIF of the app)*
-
----
-
 ## ⚡ Installation
 
 1. **Clone the repository**
