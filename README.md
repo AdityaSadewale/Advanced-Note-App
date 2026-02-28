@@ -102,12 +102,6 @@ Feel free to fork this project, submit issues, or open pull requests to make it 
 
 ---
 
-## 📄 License
-
-This project is **MIT licensed** — feel free to use it for personal and commercial purposes.
-
----
-
 Made with 💜 by **Aditya Sadewale**
 
 ```
